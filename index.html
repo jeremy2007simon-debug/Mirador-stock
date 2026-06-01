@@ -10,8 +10,8 @@ body{font-family:system-ui,sans-serif;background:#f0ede8;color:#1a1a18;min-heigh
 .topbar{background:#0d2340;color:#fff;padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
 .topbar-title{font-size:16px;font-weight:500}
 .topbar-sub{font-size:11px;color:#8ab;margin-top:1px}
-.tabs{display:flex;gap:4px}
-.tab{padding:6px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#cde;cursor:pointer;font-size:13px;font-family:inherit}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tab{padding:6px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#cde;cursor:pointer;font-size:13px;font-family:inherit}
 .tab.active{background:#fff;color:#0d2340;font-weight:500}
 .panel{display:none}.panel.active{display:block}
 .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;padding:1rem 1.5rem}
@@ -20,35 +20,55 @@ body{font-family:system-ui,sans-serif;background:#f0ede8;color:#1a1a18;min-heigh
 .metric-val{font-size:21px;font-weight:500}
 .alert-bar{margin:0 1.5rem .5rem;padding:10px 14px;border-radius:8px;background:#fcebeb;color:#a32d2d;font-size:13px;display:none}
 .toolbar{padding:.5rem 1.5rem .75rem;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.toolbar input{padding:6px 10px;border:1px solid #d3d1c7;border-radius:8px;font-size:13px;font-family:inherit;min-width:180px;background:#fff}
+.toolbar input{padding:6px 10px;border:1px solid #d3d1c7;border-radius:8px;font-size:13px;font-family:inherit;min-width:160px;background:#fff}
 .btn-sm{padding:5px 12px;border:1px solid #d3d1c7;border-radius:8px;background:#fff;cursor:pointer;font-size:12px;font-family:inherit}
 .btn-sm.active{background:#0d2340;color:#fff;border-color:#0d2340}
 .groups-wrap{padding:0 1.5rem 1.5rem;display:flex;flex-direction:column;gap:.65rem}
 .group{border:1px solid #e0ded6;border-radius:10px;overflow:hidden;background:#fff}
-.group-header{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:#f8f7f4;cursor:pointer;user-select:none}
+.group-header{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:#f8f7f4;user-select:none}
+.group-header-left{display:flex;align-items:center;gap:7px;cursor:pointer;flex:1}
 .group-title{font-size:13px;font-weight:500;display:flex;align-items:center;gap:7px}
 .group-meta{display:flex;align-items:center;gap:7px;font-size:12px;color:#888780}
 .group-alert{font-size:11px;padding:2px 7px;border-radius:5px;background:#fcebeb;color:#a32d2d;font-weight:500}
 .chevron{font-size:10px;color:#aaa;transition:transform .2s}.chevron.open{transform:rotate(180deg)}
+.group-edit-btn{border:none;background:none;color:#888780;cursor:pointer;font-size:15px;padding:4px 6px;border-radius:6px;margin-left:6px}
+.group-edit-btn:hover{color:#0d2340;background:#e6f1fb}
 .group-body{display:none}.group-body.open{display:block}
 table{width:100%;border-collapse:collapse;font-size:13px}
 th{text-align:left;font-size:11px;font-weight:500;color:#888780;padding:5px 12px;border-bottom:1px solid #e0ded6;background:#faf9f7}
-td{padding:8px 12px;border-bottom:1px solid #e0ded6;vertical-align:middle}
+td{padding:7px 12px;border-bottom:1px solid #e0ded6;vertical-align:middle}
 tr:last-child td{border-bottom:none}
 .qty-wrap{display:flex;align-items:center;gap:5px}
-.qty-btn{width:23px;height:23px;border-radius:50%;border:1px solid #d3d1c7;background:#fff;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
-.dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:4px;vertical-align:middle}
+.qty-btn{width:23px;height:23px;border-radius:50%;border:1px solid #d3d1c7;background:#fff;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;line-height:1}
 .qty-val{min-width:26px;text-align:center;font-weight:500}
-.del-btn{border:none;background:none;color:#d3d1c7;cursor:pointer;font-size:13px;padding:2px 4px;border-radius:4px}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:4px;vertical-align:middle}
 .stag{font-size:10px;padding:1px 5px;border-radius:4px;background:#f0ede8;color:#888780;margin-left:4px}
+.del-btn{border:none;background:none;color:#ccc;cursor:pointer;font-size:12px;padding:3px 5px;border-radius:4px}
+.del-btn:hover{color:#E24B4A;background:#fcebeb}
 .add-section{padding:1rem 1.5rem 1.5rem;border-top:1px solid #e0ded6;background:#fff}
 .add-title{font-size:12px;font-weight:500;color:#888780;margin-bottom:.5rem}
 .add-row{display:flex;gap:7px;flex-wrap:wrap}
 .add-row input,.add-row select{flex:1;min-width:100px;padding:6px 9px;border:1px solid #d3d1c7;border-radius:8px;font-size:13px;font-family:inherit;background:#fff;color:#1a1a18}
 .add-row input[type=number]{max-width:70px}
 .btn-add{padding:6px 14px;border:1px solid #0d2340;border-radius:8px;background:#0d2340;color:#fff;cursor:pointer;font-size:13px;font-family:inherit}
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.45);z-index:999;display:none;align-items:flex-start;justify-content:center;padding-top:40px;overflow-y:auto}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:12px;width:95%;max-width:520px;border:1px solid #e0ded6;margin-bottom:40px}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border-bottom:1px solid #e0ded6}
+.modal-head-title{font-size:15px;font-weight:500}
+.modal-close{border:none;background:none;font-size:18px;color:#888780;cursor:pointer;padding:2px 6px}
+.modal-body{padding:1rem 1.25rem}
+.edit-row{display:grid;grid-template-columns:1fr 80px 80px 70px 30px;gap:8px;align-items:center;padding:7px 0;border-bottom:1px solid #f0ede8}
+.edit-row:last-child{border-bottom:none}
+.edit-name{font-size:13px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.edit-input{padding:5px 8px;border:1px solid #d3d1c7;border-radius:7px;font-size:13px;font-family:inherit;color:#1a1a18;width:100%}
+.edit-input:focus{outline:none;border-color:#0d2340}
+.edit-labels{display:grid;grid-template-columns:1fr 80px 80px 70px 30px;gap:8px;padding:0 0 6px;font-size:11px;color:#888780}
+.modal-foot{padding:.75rem 1.25rem;border-top:1px solid #e0ded6;display:flex;justify-content:flex-end;gap:8px}
+.btn-cancel{padding:7px 16px;border:1px solid #d3d1c7;border-radius:8px;background:#fff;cursor:pointer;font-size:13px;font-family:inherit}
+.btn-save{padding:7px 16px;border:1px solid #0d2340;border-radius:8px;background:#0d2340;color:#fff;cursor:pointer;font-size:13px;font-family:inherit}
 .prov-wrap{padding:1rem 1.5rem 2rem}
-.prov-notice{font-size:12px;color:#555;margin-bottom:1rem;background:#fff8e1;border-left:3px solid #BA7517;padding:9px 13px;border-radius:0 8px 8px 0;line-height:1.5}
+.prov-notice{font-size:12px;color:#555;margin-bottom:1rem;background:#fff8e1;border-left:3px solid #BA7517;padding:9px 13px;line-height:1.5}
 .prov-filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
 .pf{padding:5px 13px;border-radius:20px;border:1px solid #d3d1c7;background:#fff;cursor:pointer;font-size:12px;font-family:inherit}
 .pf.active{background:#0d2340;color:#fff;border-color:#0d2340}
@@ -74,24 +94,20 @@ tr:last-child td{border-bottom:none}
 .bar-track{height:4px;background:#e0ded6;border-radius:3px;overflow:hidden}
 .bar-fill{height:4px;border-radius:3px}
 .pcard-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-top:8px;border-top:1px solid #f0ede8}
-.contact-info{font-size:12px;color:#888780}
-.plink{display:inline-block;padding:5px 13px;border:1px solid #0d2340;border-radius:7px;font-size:12px;color:#0d2340;text-decoration:none;font-weight:500}
 .nota-box{font-size:11px;color:#3b6d11;background:#eaf3de;padding:4px 9px;border-radius:6px;flex:1;margin:0 8px}
-
+.plink{display:inline-block;padding:5px 13px;border:1px solid #0d2340;border-radius:7px;font-size:12px;color:#0d2340;text-decoration:none;font-weight:500}
 .pedido-grupo{background:#fff;border:1px solid #e0ded6;border-radius:10px;overflow:hidden;margin-bottom:.75rem}
 .pedido-grupo-header{padding:10px 14px;background:#f8f7f4;border-bottom:1px solid #e0ded6;display:flex;align-items:center;justify-content:space-between}
 .pedido-grupo-nombre{font-size:14px;font-weight:500}
-.pedido-grupo-loc{font-size:11px;color:#888780}
-.pedido-grupo-contact{display:flex;gap:8px}
+.pedido-grupo-loc{font-size:11px;color:#888780;margin-top:2px}
 .pedido-item{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;border-bottom:1px solid #f0ede8}
 .pedido-item:last-child{border-bottom:none}
 .pedido-item-name{font-size:13px;font-weight:500}
 .pedido-item-info{font-size:12px;color:#888780;margin-top:1px}
-.pedido-item-qty{text-align:right}
-.pedido-item-qty-val{font-size:15px;font-weight:500;color:#0d2340}
-.pedido-item-qty-lbl{font-size:11px;color:#888780}
-.badge-critico{font-size:10px;padding:2px 6px;border-radius:4px;background:#fcebeb;color:#a32d2d;font-weight:500;margin-left:6px}
-.badge-bajo{font-size:10px;padding:2px 6px;border-radius:4px;background:#faeeda;color:#854f0b;font-weight:500;margin-left:6px}
+.pedido-qty-val{font-size:15px;font-weight:500;color:#0d2340}
+.pedido-qty-lbl{font-size:11px;color:#888780;text-align:right}
+.bcrit{font-size:10px;padding:2px 6px;border-radius:4px;background:#fcebeb;color:#a32d2d;font-weight:500;margin-left:6px}
+.bbajo{font-size:10px;padding:2px 6px;border-radius:4px;background:#faeeda;color:#854f0b;font-weight:500;margin-left:6px}
 </style>
 </head>
 <body>
@@ -99,7 +115,7 @@ tr:last-child td{border-bottom:none}
 <div class="topbar">
   <div>
     <div class="topbar-title">🐟 El Mirador de los Abrigos</div>
-    <div class="topbar-sub">Gestión de Stock y Proveedores · Tenerife Sur</div>
+    <div class="topbar-sub">Gestion de Stock y Proveedores · Tenerife Sur</div>
   </div>
   <div class="tabs">
     <button class="tab active" id="tab-stock" onclick="showPanel('stock')">📦 Stock</button>
@@ -144,13 +160,12 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 
-
 <div id="panel-pedido" class="panel">
   <div class="prov-wrap">
     <div id="pedido-ok" style="display:none;text-align:center;padding:3rem 1rem">
       <div style="font-size:48px;margin-bottom:1rem">✅</div>
-      <div style="font-size:16px;font-weight:500;color:#3b6d11">Todo el stock está en niveles correctos</div>
-      <div style="font-size:13px;color:#888780;margin-top:6px">No hay productos que pedir en este momento</div>
+      <div style="font-size:16px;font-weight:500;color:#3b6d11">Todo el stock esta en niveles correctos</div>
+      <div style="font-size:13px;color:#888780;margin-top:6px">No hay productos que pedir ahora mismo</div>
     </div>
     <div id="pedido-content">
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:1rem">
@@ -169,19 +184,33 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 
+<!-- MODAL EDITAR GRUPO -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-head-title" id="modal-title">Editar grupo</div>
+      <button class="modal-close" onclick="cerrarModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="edit-labels">
+        <span>Producto</span><span>Cantidad</span><span>Minimo</span><span>Unidad</span><span></span>
+      </div>
+      <div id="modal-rows"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-cancel" onclick="cerrarModal()">Cancelar</button>
+      <button class="btn-save" onclick="guardarModal()">Guardar cambios</button>
+    </div>
+  </div>
+</div>
+
 <script>
 var SGROUPS=[
-  {key:'Pescados y mariscos',icon:'🐟'},
-  {key:'Carnes y aves',icon:'🍖'},
-  {key:'Verduras y hortalizas',icon:'🥦'},
-  {key:'Frutas',icon:'🍋'},
-  {key:'Lacteos',icon:'🥛'},
-  {key:'Harinas y arroces',icon:'🌾'},
-  {key:'Salsas y condimentos',icon:'🫙'},
-  {key:'Aceites y grasas',icon:'🫒'},
-  {key:'Panes',icon:'🍞'},
-  {key:'Bebidas y alcohol',icon:'🍷'},
-  {key:'Otros',icon:'📦'}
+  {key:'Pescados y mariscos',icon:'🐟'},{key:'Carnes y aves',icon:'🍖'},
+  {key:'Verduras y hortalizas',icon:'🥦'},{key:'Frutas',icon:'🍋'},
+  {key:'Lacteos',icon:'🥛'},{key:'Harinas y arroces',icon:'🌾'},
+  {key:'Salsas y condimentos',icon:'🫙'},{key:'Aceites y grasas',icon:'🫒'},
+  {key:'Panes',icon:'🍞'},{key:'Bebidas y alcohol',icon:'🍷'},{key:'Otros',icon:'📦'}
 ];
 
 var prods=[
@@ -245,36 +274,49 @@ var prods=[
 ];
 
 var PROVEEDORES=[
-  {rank:1,medal:'🥇',nombre:'Pescados Goyo',loc:'Santa Cruz de Tenerife',cats:['Pescados y mariscos'],calidad:5,precio:4,entrega:5,scoreColor:'#3b6d11',desc:'Mayorista lider en Tenerife especializado en pescado y marisco fresco y congelado. Mas de 30 anos sirviendo a hoteles y restaurantes. Cadena de frio garantizada.',productos:['Sardinas','Calamares','Lubina','Salmon','Gueldes','Chopitos','Atun','Lenguado','Gambas','Langostinos','Pulpo','Mejillones','Zamburinas','Navajas','Ostras','Gambon','Lapas','Bogavante'],plazo:'24 h frescos / 48 h congelados',plazoColor:'green',pedido:'Consultar con comercial',tel:'www.pescadosgoyo.es',web:'https://www.pescadosgoyo.es',nota:'Referencia en la isla para pescados y mariscos frescos.'},
-  {rank:2,medal:'🥇',nombre:'Jovencasa Carnes',loc:'Tenerife - distribucion insular',cats:['Carnes y aves'],calidad:5,precio:4,entrega:5,scoreColor:'#3b6d11',desc:'Proveedor y distribuidor mayorista lider en carnes de Tenerife desde 1989. Mas de 35 anos en hosteleria. Estrictos controles de calidad y cadena de frio.',productos:['Entrecot de ternera','Pollo entero','Chuletas cerdo negro','Chistorra','Nuggets','Solomillo','Cordero'],plazo:'24 h',plazoColor:'green',pedido:'Consultar con comercial',tel:'jovencasa.com',web:'https://jovencasa.com',nota:'La mejor opcion para carnes en Tenerife.'},
-  {rank:3,medal:'🥈',nombre:'Gambin Canarias (Mercatenerife)',loc:'Mercatenerife, Santa Cruz de Tenerife',cats:['Verduras y hortalizas','Frutas'],calidad:5,precio:4,entrega:4,scoreColor:'#3b6d11',desc:'Grupo Gambin con 60 anos de historia. Opera desde Mercatenerife con mas de 100 millones de kg comercializados en Canarias. Canal HORECA.',productos:['Tomate','Cebolla','Ajo','Espinacas','Pimientos','Verduras frescas','Aguacate','Mango','Lima','Pina','Papas','Hierbas aromaticas'],plazo:'24 h (pedido antes de 18:00)',plazoColor:'green',pedido:'Consultar',tel:'922 229 371',web:'https://gambincanarias.com',nota:'Referente hortofruticola en Canarias.'},
-  {rank:4,medal:'🥈',nombre:'Surimar Fresco y Congelados',loc:'Telde, Gran Canaria (reparto Tenerife)',cats:['Pescados y mariscos'],calidad:4,precio:5,entrega:4,scoreColor:'#185fa5',desc:'Uno de los mayores mayoristas de pescado congelado de Canarias. Catalogo amplisimo. Precios muy competitivos por volumen.',productos:['Calamares congelados','Choco','Cherne','Merluza','Langostinos','Pulpo','Almejas','Salmon congelado','Sardinas congeladas','Gambas'],plazo:'48 h desde Gran Canaria',plazoColor:'amber',pedido:'Pedido minimo por ruta',tel:'928 183 575',web:'https://www.surimarfrescoycongelados.es',nota:'Mejor precio en congelados. Ideal para generos de reserva.'},
-  {rank:5,medal:'🥈',nombre:'Garpa Alimentacion',loc:'Pol. Industrial El Mayorazgo, Tenerife',cats:['Lacteos','Salsas y condimentos','Harinas y arroces','Aceites y grasas'],calidad:4,precio:4,entrega:5,scoreColor:'#3b6d11',desc:'Empresa canaria fundada en 1980. Mas de 44 anos importando y distribuyendo alimentacion al por mayor en Tenerife. Flota propia de reparto.',productos:['Mantequilla','Quesos','Mermeladas','Sal','Pimienta','Conservas','Aceite de oliva','Harina','Arroz','Pastas','Lacteos'],plazo:'24 h (urgencias mismo dia)',plazoColor:'green',pedido:'Sin minimo especificado',tel:'922 215 500',web:'https://garpa-alimentacion.com',nota:'El proveedor mas rapido para secos y lacteos en Tenerife.'},
-  {rank:6,medal:'🥉',nombre:'Domingo Gutierrez',loc:'Santa Cruz de Tenerife',cats:['Salsas y condimentos','Bebidas y alcohol','Aceites y grasas','Harinas y arroces'],calidad:4,precio:4,entrega:4,scoreColor:'#185fa5',desc:'Distribuidor mayorista HORECA desde 1979 con mas de 4.000 m2 de almacen. Representante exclusivo de Knorr, Unilever Food Solutions, Lipton y conservas Pescamar.',productos:['Mayonesa','Salsas Knorr','Aceites','Conservas Pescamar','Vinos','Arroces','Pastas','Lacteos','Caldos concentrados'],plazo:'24-48 h',plazoColor:'amber',pedido:'Consultar',tel:'922 214 111',web:'https://domingogutierrez.com',nota:'Excelente para salsas de marca y bebidas.'},
-  {rank:7,medal:'🥉',nombre:'Makro Tenerife',loc:'Avda. Tres de Mayo, Santa Cruz de Tenerife',cats:['Aceites y grasas','Harinas y arroces','Salsas y condimentos','Lacteos','Bebidas y alcohol'],calidad:3,precio:5,entrega:2,scoreColor:'#854f0b',desc:'Gran superficie mayorista para hosteleria. Mayor variedad del mercado. Requiere tarjeta Makro. Mejores precios en grandes formatos.',productos:['Aceite oliva garrafa','Arroz 25kg','Harina','Pasta','Sal','Mantequilla','Conservas','Vinos','Bebidas','Quesos'],plazo:'Recogida inmediata / Reparto 24-48 h',plazoColor:'amber',pedido:'Sin minimo en tienda',tel:'www.makro.es',web:'https://www.makro.es',nota:'Mejor precio absoluto del mercado en grandes cantidades.'},
-  {rank:8,medal:'',nombre:'Comesa Canarias',loc:'Tenerife - distribucion Canarias',cats:['Bebidas y alcohol'],calidad:5,precio:3,entrega:5,scoreColor:'#3b6d11',desc:'Distribuidor exclusivo de productos gourmet, vinos, cava y cafe premium para hosteleria en Canarias. Distribuidor exclusivo de Cafe Brasilia Medalla de Oro.',productos:['Vino tinto y blanco gourmet','Cava Codorniu','Cafe Brasilia','Gin premium','Licores','Siropes premium'],plazo:'24-48 h',plazoColor:'amber',pedido:'Consultar contrato HORECA',tel:'comesacanarias.es',web:'https://comesacanarias.es',nota:'La mejor opcion para carta de vinos y bebidas de calidad.'},
-  {rank:9,medal:'',nombre:'La Venta Nueva',loc:'Tenerife - distribucion insular',cats:['Salsas y condimentos','Aceites y grasas','Lacteos','Panes','Harinas y arroces','Bebidas y alcohol'],calidad:4,precio:4,entrega:5,scoreColor:'#3b6d11',desc:'Mas de 100 anos de experiencia distribuyendo a hoteles, restaurantes y cafeterias en Tenerife. Servicio muy personalizado y agil.',productos:['Alimentacion general','Pan','Bebidas','Lacteos','Aceites','Limpieza hosteleria','Conservas','Condimentos'],plazo:'24 h (acuerdo comercial)',plazoColor:'green',pedido:'Sin minimo indicado',tel:'laventanuevadistribucion.com',web:'https://laventanuevadistribucion.com',nota:'Proveedor generalista muy fiable para pedidos de varias categorias.'}
+  {rank:1,medal:'🥇',nombre:'Pescados Goyo',loc:'Santa Cruz de Tenerife',cats:['Pescados y mariscos'],calidad:5,precio:4,entrega:5,scoreColor:'#3b6d11',desc:'Mayorista lider en Tenerife especializado en pescado y marisco fresco y congelado. Mas de 30 anos sirviendo a hoteles y restaurantes.',productos:['Sardinas','Calamares','Lubina','Salmon','Gueldes','Chopitos','Atun','Lenguado','Gambas','Langostinos','Pulpo','Mejillones','Zamburinas','Navajas','Ostras','Gambon','Lapas','Bogavante'],plazo:'24h frescos / 48h congelados',plazoColor:'green',pedido:'Consultar comercial',tel:'www.pescadosgoyo.es',web:'https://www.pescadosgoyo.es',nota:'Referencia en la isla para pescados y mariscos frescos.'},
+  {rank:2,medal:'🥇',nombre:'Jovencasa Carnes',loc:'Tenerife - distribucion insular',cats:['Carnes y aves'],calidad:5,precio:4,entrega:5,scoreColor:'#3b6d11',desc:'Proveedor mayorista lider en carnes de Tenerife desde 1989. Mas de 35 anos en hosteleria con estrictos controles de calidad.',productos:['Entrecot ternera','Pollo entero','Chuletas cerdo negro','Chistorra','Nuggets','Solomillo','Cordero'],plazo:'24h',plazoColor:'green',pedido:'Consultar comercial',tel:'jovencasa.com',web:'https://jovencasa.com',nota:'La mejor opcion para carnes en Tenerife.'},
+  {rank:3,medal:'🥈',nombre:'Gambin Canarias',loc:'Mercatenerife, Santa Cruz de Tenerife',cats:['Verduras y hortalizas','Frutas'],calidad:5,precio:4,entrega:4,scoreColor:'#3b6d11',desc:'Grupo Gambin con 60 anos de historia. Opera desde Mercatenerife con mas de 100 millones de kg en Canarias.',productos:['Tomate','Cebolla','Ajo','Espinacas','Pimientos','Verduras frescas','Aguacate','Mango','Lima','Pina','Papas','Hierbas'],plazo:'24h (pedido antes 18:00)',plazoColor:'green',pedido:'Consultar',tel:'922 229 371',web:'https://gambincanarias.com',nota:'Referente hortofruticola en Canarias.'},
+  {rank:4,medal:'🥈',nombre:'Surimar Fresco y Congelados',loc:'Telde, Gran Canaria (reparto Tenerife)',cats:['Pescados y mariscos'],calidad:4,precio:5,entrega:4,scoreColor:'#185fa5',desc:'Uno de los mayores mayoristas de pescado congelado de Canarias. Catalogo amplisimo y precios muy competitivos por volumen.',productos:['Calamares congelados','Choco','Cherne','Merluza','Langostinos','Pulpo','Almejas','Salmon congelado','Gambas'],plazo:'48h desde Gran Canaria',plazoColor:'amber',pedido:'Pedido minimo por ruta',tel:'928 183 575',web:'https://www.surimarfrescoycongelados.es',nota:'Mejor precio en congelados. Ideal para generos de reserva.'},
+  {rank:5,medal:'🥈',nombre:'Garpa Alimentacion',loc:'Pol. El Mayorazgo, Tenerife',cats:['Lacteos','Salsas y condimentos','Harinas y arroces','Aceites y grasas'],calidad:4,precio:4,entrega:5,scoreColor:'#3b6d11',desc:'Empresa canaria fundada en 1980. Mas de 44 anos distribuyendo alimentacion al por mayor en Tenerife con flota propia.',productos:['Mantequilla','Quesos','Mermeladas','Sal','Pimienta','Conservas','Aceite de oliva','Harina','Arroz','Pastas','Lacteos'],plazo:'24h (urgencias mismo dia)',plazoColor:'green',pedido:'Sin minimo',tel:'922 215 500',web:'https://garpa-alimentacion.com',nota:'El proveedor mas rapido para secos y lacteos.'},
+  {rank:6,medal:'🥉',nombre:'Domingo Gutierrez',loc:'Santa Cruz de Tenerife',cats:['Salsas y condimentos','Bebidas y alcohol','Aceites y grasas'],calidad:4,precio:4,entrega:4,scoreColor:'#185fa5',desc:'Distribuidor mayorista HORECA desde 1979 con mas de 4.000 m2 de almacen. Representante de Knorr, Unilever y Pescamar.',productos:['Mayonesa','Salsas Knorr','Aceites','Conservas Pescamar','Vinos','Arroces','Caldos'],plazo:'24-48h',plazoColor:'amber',pedido:'Consultar',tel:'922 214 111',web:'https://domingogutierrez.com',nota:'Excelente para salsas de marca y bebidas.'},
+  {rank:7,medal:'🥉',nombre:'Makro Tenerife',loc:'Avda. Tres de Mayo, Santa Cruz de Tenerife',cats:['Aceites y grasas','Harinas y arroces','Salsas y condimentos','Lacteos','Bebidas y alcohol'],calidad:3,precio:5,entrega:2,scoreColor:'#854f0b',desc:'Gran superficie mayorista. Mayor variedad del mercado. Requiere tarjeta Makro. Mejores precios en grandes formatos.',productos:['Aceite oliva garrafa','Arroz 25kg','Harina','Pasta','Sal','Mantequilla','Conservas','Vinos','Bebidas'],plazo:'Recogida inmediata',plazoColor:'amber',pedido:'Sin minimo en tienda',tel:'www.makro.es',web:'https://www.makro.es',nota:'Mejor precio absoluto en grandes cantidades.'},
+  {rank:8,medal:'',nombre:'Comesa Canarias',loc:'Tenerife - distribucion Canarias',cats:['Bebidas y alcohol'],calidad:5,precio:3,entrega:5,scoreColor:'#3b6d11',desc:'Distribuidor exclusivo de vinos, cava y cafe premium para hosteleria en Canarias.',productos:['Vino gourmet','Cava Codorniu','Cafe Brasilia','Gin premium','Licores','Siropes'],plazo:'24-48h',plazoColor:'amber',pedido:'Contrato HORECA',tel:'comesacanarias.es',web:'https://comesacanarias.es',nota:'La mejor opcion para carta de vinos de calidad.'},
+  {rank:9,medal:'',nombre:'La Venta Nueva',loc:'Tenerife - distribucion insular',cats:['Salsas y condimentos','Aceites y grasas','Lacteos','Panes','Harinas y arroces','Bebidas y alcohol'],calidad:4,precio:4,entrega:5,scoreColor:'#3b6d11',desc:'Mas de 100 anos distribuyendo a hoteles y restaurantes en Tenerife. Servicio muy personalizado.',productos:['Alimentacion general','Pan','Bebidas','Lacteos','Aceites','Limpieza','Conservas'],plazo:'24h',plazoColor:'green',pedido:'Sin minimo',tel:'laventanuevadistribucion.com',web:'https://laventanuevadistribucion.com',nota:'Proveedor generalista muy fiable para varias categorias.'}
 ];
 
-var nid=58,openGroups={},activeFilter='all',activePcat='Todos';
+var MAPA_PROV={
+  'Sardinas frescas':'Pescados Goyo','Calamares':'Pescados Goyo','Lubina':'Pescados Goyo','Atun rojo':'Pescados Goyo','Salmon':'Pescados Goyo','Lenguado':'Pescados Goyo','Bogavante':'Pescados Goyo','Gambas':'Pescados Goyo','Pulpo':'Pescados Goyo','Mejillones':'Pescados Goyo','Zamburinas':'Pescados Goyo','Navajas':'Pescados Goyo','Chopitos':'Pescados Goyo','Gueldes':'Pescados Goyo','Langostinos':'Pescados Goyo','Almejas':'Pescados Goyo','Lapas':'Pescados Goyo','Ostras vivas':'Pescados Goyo','Gambon (cola)':'Pescados Goyo',
+  'Entrecot de ternera':'Jovencasa Carnes','Pollo entero':'Jovencasa Carnes','Chuletas cerdo negro':'Jovencasa Carnes','Chistorra de Navarra':'Jovencasa Carnes','Nuggets de pollo':'Jovencasa Carnes',
+  'Verduras frescas':'Gambin Canarias','Tomate':'Gambin Canarias','Cebolla':'Gambin Canarias','Ajo':'Gambin Canarias','Espinacas':'Gambin Canarias','Pimientos de Padron':'Gambin Canarias','Hierbas aromaticas':'Gambin Canarias','Aguacate':'Gambin Canarias','Pina':'Gambin Canarias','Mango':'Gambin Canarias','Lima':'Gambin Canarias','Papas arrugadas':'Gambin Canarias','Papas fritas':'Gambin Canarias',
+  'Mantequilla':'Garpa Alimentacion','Queso lasana':'Garpa Alimentacion','Mermelada arandanos':'Garpa Alimentacion','Arroz':'Garpa Alimentacion','Harina rebozados':'Garpa Alimentacion','Pasta spaghetti':'Garpa Alimentacion','Pasta lasana':'Garpa Alimentacion','Tinta de calamar':'Garpa Alimentacion','Sal':'Garpa Alimentacion','Pimienta negra':'Garpa Alimentacion','Aceite de oliva':'Garpa Alimentacion','Aceite de girasol':'Garpa Alimentacion',
+  'Mojo canario':'Domingo Gutierrez','Mayonesa de mango':'Domingo Gutierrez','Salsa mostaza':'Domingo Gutierrez','Salsa meuniere':'Domingo Gutierrez','Vinagreta de fresa':'Domingo Gutierrez','Cilantro':'Domingo Gutierrez',
+  'Pan':'La Venta Nueva','Vino blanco cocina':'Comesa Canarias'
+};
+
+var CONTACTO_PROV={
+  'Pescados Goyo':{tel:'',web:'pescadosgoyo.es'},'Jovencasa Carnes':{tel:'',web:'jovencasa.com'},
+  'Gambin Canarias':{tel:'922 229 371',web:'gambincanarias.com'},'Surimar Fresco y Congelados':{tel:'928 183 575',web:'surimarfrescoycongelados.es'},
+  'Garpa Alimentacion':{tel:'922 215 500',web:'garpa-alimentacion.com'},'Domingo Gutierrez':{tel:'922 214 111',web:'domingogutierrez.com'},
+  'Makro Tenerife':{tel:'',web:'makro.es'},'Comesa Canarias':{tel:'',web:'comesacanarias.es'},'La Venta Nueva':{tel:'',web:'laventanuevadistribucion.com'}
+};
+
+var nid=58,openGroups={},activeFilter='all',activePcat='Todos',modalCat=null;
 
 function status(q,m){return q===0?'danger':q<=m?'warn':'ok';}
 function getIcon(k){var g=SGROUPS.find(function(x){return x.key===k;});return g?g.icon:'📦';}
 function getAllCats(){var c={};SGROUPS.forEach(function(g){c[g.key]=true;});prods.forEach(function(p){c[p.cat]=true;});return Object.keys(c);}
-
 function updateSel(){
   var s=document.getElementById('i-cat'),v=s.value;
   s.innerHTML='<option value="">-- Categoria --</option>';
   getAllCats().forEach(function(c){var o=document.createElement('option');o.value=c;o.textContent=c;s.appendChild(o);});
   s.value=v;
 }
-
 function setFilter(f){
   activeFilter=f;
   ['all','warn','danger'].forEach(function(x){document.getElementById('f-'+x).classList.toggle('active',x===f);});
   renderStock();
 }
-
 function renderStock(){
   var s=document.getElementById('search').value.toLowerCase();
   var ok=0,low=0,crit=0,al=[],grouped={};
@@ -295,13 +337,18 @@ function renderStock(){
     var al2=items.filter(function(p){var st=status(p.qty,p.min);return st==='warn'||st==='danger';});
     var isOpen=openGroups[cat]!==false;
     var div=document.createElement('div');div.className='group';
-    var catSafe=cat.replace(/'/g,'');
-    var h='<div class="group-header" onclick="toggleGroup(this.parentNode)">';
-    h+='<div class="group-title" data-cat="'+catSafe+'"><span>'+getIcon(cat)+'</span>'+cat+'</div>';
+    var catId=cat.replace(/\s/g,'_');
+    var h='<div class="group-header">';
+    h+='<div class="group-header-left" onclick="toggleGroup(\''+catId+'\')">';
+    h+='<span>'+getIcon(cat)+'</span><span style="font-size:13px;font-weight:500">'+cat+'</span>';
     h+='<div class="group-meta">';
     if(al2.length)h+='<span class="group-alert">⚠ '+al2.length+'</span>';
-    h+='<span>'+items.length+' prod.</span><span class="chevron'+(isOpen?' open':'')+'">▼</span></div></div>';
-    var b='<div class="group-body'+(isOpen?' open':'')+'"><table><thead><tr><th>Ingrediente</th><th>Cant.</th><th>Min.</th><th>Estado</th><th></th></tr></thead><tbody>';
+    h+='<span>'+items.length+' prod.</span></div>';
+    h+='<span class="chevron'+(isOpen?' open':'')+'">▼</span>';
+    h+='</div>';
+    h+='<button class="group-edit-btn" onclick="abrirModalGrupo(\''+catId+'\')" title="Editar grupo">✏️</button>';
+    h+='</div>';
+    var b='<div class="group-body'+(isOpen?' open':'')+'"><table><thead><tr><th>Ingrediente</th><th>Cantidad</th><th>Min.</th><th>Estado</th></tr></thead><tbody>';
     items.forEach(function(p){
       var st=status(p.qty,p.min);
       var col=st==='ok'?'#639922':st==='warn'?'#BA7517':'#E24B4A';
@@ -311,7 +358,7 @@ function renderStock(){
       b+='<td><div class="qty-wrap"><button class="qty-btn" onclick="ch('+p.id+',-1)">-</button><span class="qty-val">'+p.qty+'</span><button class="qty-btn" onclick="ch('+p.id+',1)">+</button></div></td>';
       b+='<td style="color:#888780">'+p.min+'</td>';
       b+='<td><span class="dot" style="background:'+col+'"></span>'+lbl+'</td>';
-      b+='<td><button class="del-btn" onclick="delProd('+p.id+')">x</button></td></tr>';
+      b+='</tr>';
     });
     b+='</tbody></table></div>';
     div.innerHTML=h+b;wrap.appendChild(div);
@@ -326,267 +373,199 @@ function renderStock(){
   updateSel();
 }
 
-function toggleGroup(groupEl){
-  var body=groupEl.querySelector('.group-body');
-  var chev=groupEl.querySelector('.chevron');
-  var cat=groupEl.querySelector('.group-title').getAttribute('data-cat');
-  var isOpen=body.classList.contains('open');
-  body.classList.toggle('open',!isOpen);
-  chev.classList.toggle('open',!isOpen);
-  openGroups[cat]=!isOpen;
+var catMap={};
+function toggleGroup(catId){
+  var g=document.querySelector('[data-catid="'+catId+'"]');
+  if(!g){
+    var bodies=document.querySelectorAll('.group-body');
+    var chevrons=document.querySelectorAll('.chevron');
+    bodies.forEach(function(b,i){
+      var header=b.parentNode.querySelector('.group-header-left');
+      if(header&&header.getAttribute('onclick')==="toggleGroup('"+catId+"')"){
+        var isOpen=b.classList.contains('open');
+        b.classList.toggle('open',!isOpen);
+        chevrons[i].classList.toggle('open',!isOpen);
+      }
+    });
+    return;
+  }
 }
+document.addEventListener('click',function(e){
+  var left=e.target.closest('.group-header-left');
+  if(left){
+    var group=left.closest('.group');
+    var body=group.querySelector('.group-body');
+    var chev=left.querySelector('.chevron');
+    var isOpen=body.classList.contains('open');
+    body.classList.toggle('open',!isOpen);
+    if(chev)chev.classList.toggle('open',!isOpen);
+  }
+});
 
 function ch(id,d){var p=prods.find(function(x){return x.id===id;});if(p){p.qty=Math.max(0,p.qty+d);renderStock();}}
-function delProd(id){prods=prods.filter(function(x){return x.id!==id;});renderStock();}
 function addProd(){
   var n=document.getElementById('i-name').value.trim();if(!n)return;
   var cat=document.getElementById('i-cat').value||'Otros';
   prods.push({id:nid++,name:n,cat:cat,qty:parseInt(document.getElementById('i-qty').value)||0,unit:document.getElementById('i-unit').value.trim()||'',min:parseInt(document.getElementById('i-min').value)||1});
-  ['i-name','i-qty','i-unit','i-min'].forEach(function(id){document.getElementById(id).value='';});
+  ['i-name','i-qty','i-unit','i-min'].forEach(function(x){document.getElementById(x).value='';});
   document.getElementById('i-cat').value='';
   renderStock();
 }
+
+function abrirModalGrupo(catId){
+  var catName=catId.replace(/_/g,' ');
+  var items=prods.filter(function(p){return p.cat===catName;});
+  if(!items.length)return;
+  modalCat=catName;
+  document.getElementById('modal-title').textContent='Editar: '+getIcon(catName)+' '+catName;
+  var html='';
+  items.forEach(function(p){
+    html+='<div class="edit-row" data-id="'+p.id+'">';
+    html+='<div class="edit-name" title="'+p.name+'">'+p.name+'</div>';
+    html+='<input type="number" class="edit-input" data-field="qty" value="'+p.qty+'" min="0"/>';
+    html+='<input type="number" class="edit-input" data-field="min" value="'+p.min+'" min="1"/>';
+    html+='<input type="text" class="edit-input" data-field="unit" value="'+(p.unit||'')+'"/>';
+    html+='<button style="border:none;background:none;color:#ccc;cursor:pointer;font-size:13px;padding:2px" onclick="eliminarDeModal('+p.id+')" title="Eliminar">✕</button>';
+    html+='</div>';
+  });
+  document.getElementById('modal-rows').innerHTML=html;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function eliminarDeModal(id){
+  if(!confirm('Eliminar este producto?'))return;
+  prods=prods.filter(function(x){return x.id!==id;});
+  var row=document.querySelector('.edit-row[data-id="'+id+'"]');
+  if(row)row.remove();
+}
+
+function cerrarModal(){
+  document.getElementById('modal-overlay').classList.remove('open');
+  modalCat=null;
+}
+function guardarModal(){
+  var rows=document.querySelectorAll('.edit-row[data-id]');
+  rows.forEach(function(row){
+    var id=parseInt(row.getAttribute('data-id'));
+    var p=prods.find(function(x){return x.id===id;});
+    if(!p)return;
+    var q=parseInt(row.querySelector('[data-field="qty"]').value);
+    var m=parseInt(row.querySelector('[data-field="min"]').value);
+    var u=row.querySelector('[data-field="unit"]').value.trim();
+    if(!isNaN(q)&&q>=0)p.qty=q;
+    if(!isNaN(m)&&m>=1)p.min=m;
+    p.unit=u;
+  });
+  cerrarModal();
+  renderStock();
+}
+document.getElementById('modal-overlay').addEventListener('click',function(e){if(e.target===this)cerrarModal();});
 
 function showPanel(n){
   ['stock','prov','pedido'].forEach(function(p){
     document.getElementById('panel-'+p).classList.toggle('active',n===p);
     document.getElementById('tab-'+p).classList.toggle('active',n===p);
   });
-  if(n==='pedido') renderPedido();
+  if(n==='pedido')renderPedido();
 }
 
 function renderProveedores(){
   var cats=['Todos'];
   PROVEEDORES.forEach(function(p){p.cats.forEach(function(c){if(cats.indexOf(c)===-1)cats.push(c);});});
-  var pf=document.getElementById('prov-filters');
-  pf.innerHTML='';
+  var pf=document.getElementById('prov-filters');pf.innerHTML='';
   cats.forEach(function(c){
-    var b=document.createElement('button');
-    b.className='pf'+(c===activePcat?' active':'');
-    b.textContent=c;
-    b.onclick=function(){activePcat=c;renderProveedores();};
-    pf.appendChild(b);
+    var b=document.createElement('button');b.className='pf'+(c===activePcat?' active':'');b.textContent=c;
+    b.onclick=function(){activePcat=c;renderProveedores();};pf.appendChild(b);
   });
-  var list=document.getElementById('prov-list');
-  list.innerHTML='';
+  var list=document.getElementById('prov-list');list.innerHTML='';
   var filtered=activePcat==='Todos'?PROVEEDORES:PROVEEDORES.filter(function(p){return p.cats.indexOf(activePcat)!==-1;});
   filtered.forEach(function(p,i){
     var score=((p.calidad+p.precio+p.entrega)/3).toFixed(1);
     var chips=p.productos.map(function(x){return '<span class="pchip">'+x+'</span>';}).join('');
-    var bars='<div class="bars-row">';
-    bars+='<div class="bar-item"><div class="bar-lbl">Calidad</div><div class="bar-track"><div class="bar-fill" style="width:'+Math.round(p.calidad/5*100)+'%;background:#639922"></div></div></div>';
-    bars+='<div class="bar-item"><div class="bar-lbl">Precio</div><div class="bar-track"><div class="bar-fill" style="width:'+Math.round(p.precio/5*100)+'%;background:#185fa5"></div></div></div>';
-    bars+='<div class="bar-item"><div class="bar-lbl">Entrega</div><div class="bar-track"><div class="bar-fill" style="width:'+Math.round(p.entrega/5*100)+'%;background:#854f0b"></div></div></div>';
-    bars+='</div>';
-    var html='<div class="pcard">';
-    html+='<div class="pcard-rank">';
-    html+='<div class="rank-num">'+(i+1)+p.medal+'</div>';
-    html+='<div style="flex:1;padding:0 12px"><div class="rank-name">'+p.nombre+'</div><div class="rank-loc">📍 '+p.loc+'</div></div>';
-    html+='<span class="score-pill" style="background:'+p.scoreColor+'">★ '+score+'</span>';
-    html+='</div>';
-    html+='<div class="pcard-body">';
-    html+='<div class="pcard-desc">'+p.desc+'</div>';
-    html+='<div class="info-grid">';
-    html+='<div class="info-box"><div class="info-box-label">Plazo de entrega</div><div class="info-box-val '+p.plazoColor+'">'+p.plazo+'</div></div>';
-    html+='<div class="info-box"><div class="info-box-label">Pedido minimo</div><div class="info-box-val">'+p.pedido+'</div></div>';
-    html+='</div>';
-    html+='<div><div style="font-size:11px;color:#888780;margin-bottom:6px;font-weight:500">PRODUCTOS QUE SUMINISTRA</div><div class="prod-chips">'+chips+'</div></div>';
-    html+=bars;
-    html+='<div class="pcard-footer">';
-    html+='<div class="contact-info">'+p.tel+'</div>';
-    html+='<div class="nota-box">💡 '+p.nota+'</div>';
-    html+='<a class="plink" href="'+p.web+'" target="_blank">Ver web</a>';
-    html+='</div>';
-    html+='</div></div>';
+    var bars='<div class="bars-row"><div class="bar-item"><div class="bar-lbl">Calidad</div><div class="bar-track"><div class="bar-fill" style="width:'+Math.round(p.calidad/5*100)+'%;background:#639922"></div></div></div><div class="bar-item"><div class="bar-lbl">Precio</div><div class="bar-track"><div class="bar-fill" style="width:'+Math.round(p.precio/5*100)+'%;background:#185fa5"></div></div></div><div class="bar-item"><div class="bar-lbl">Entrega</div><div class="bar-track"><div class="bar-fill" style="width:'+Math.round(p.entrega/5*100)+'%;background:#854f0b"></div></div></div></div>';
+    var html='<div class="pcard"><div class="pcard-rank"><div class="rank-num">'+(i+1)+p.medal+'</div><div style="flex:1;padding:0 12px"><div class="rank-name">'+p.nombre+'</div><div class="rank-loc">📍 '+p.loc+'</div></div><span class="score-pill" style="background:'+p.scoreColor+'">★ '+score+'</span></div><div class="pcard-body"><div class="pcard-desc">'+p.desc+'</div><div class="info-grid"><div class="info-box"><div class="info-box-label">Plazo de entrega</div><div class="info-box-val '+p.plazoColor+'">'+p.plazo+'</div></div><div class="info-box"><div class="info-box-label">Pedido minimo</div><div class="info-box-val">'+p.pedido+'</div></div></div><div><div style="font-size:11px;color:#888780;margin-bottom:6px;font-weight:500">PRODUCTOS QUE SUMINISTRA</div><div class="prod-chips">'+chips+'</div></div>'+bars+'<div class="pcard-footer"><div style="font-size:12px;color:#888780">'+p.tel+'</div><div class="nota-box">💡 '+p.nota+'</div><a class="plink" href="'+p.web+'" target="_blank">Ver web</a></div></div></div>';
     list.innerHTML+=html;
   });
 }
 
-
-var MAPA_PROVEEDOR = {
-  'Sardinas frescas':'Pescados Goyo','Calamares':'Pescados Goyo','Lubina':'Pescados Goyo',
-  'Atun rojo':'Pescados Goyo','Salmon':'Pescados Goyo','Lenguado':'Pescados Goyo',
-  'Bogavante':'Pescados Goyo','Gambas':'Pescados Goyo','Pulpo':'Pescados Goyo',
-  'Mejillones':'Pescados Goyo','Zamburinas':'Pescados Goyo','Navajas':'Pescados Goyo',
-  'Chopitos':'Pescados Goyo','Gueldes':'Pescados Goyo','Langostinos':'Pescados Goyo',
-  'Almejas':'Pescados Goyo','Lapas':'Pescados Goyo','Ostras vivas':'Pescados Goyo',
-  'Gambon (cola)':'Pescados Goyo',
-  'Entrecot de ternera':'Jovencasa Carnes','Pollo entero':'Jovencasa Carnes',
-  'Chuletas cerdo negro':'Jovencasa Carnes','Chistorra de Navarra':'Jovencasa Carnes',
-  'Nuggets de pollo':'Jovencasa Carnes',
-  'Verduras frescas':'Gambin Canarias (Mercatenerife)','Tomate':'Gambin Canarias (Mercatenerife)',
-  'Cebolla':'Gambin Canarias (Mercatenerife)','Ajo':'Gambin Canarias (Mercatenerife)',
-  'Espinacas':'Gambin Canarias (Mercatenerife)','Pimientos de Padron':'Gambin Canarias (Mercatenerife)',
-  'Hierbas aromaticas':'Gambin Canarias (Mercatenerife)','Aguacate':'Gambin Canarias (Mercatenerife)',
-  'Pina':'Gambin Canarias (Mercatenerife)','Mango':'Gambin Canarias (Mercatenerife)',
-  'Lima':'Gambin Canarias (Mercatenerife)','Papas arrugadas':'Gambin Canarias (Mercatenerife)',
-  'Papas fritas':'Gambin Canarias (Mercatenerife)',
-  'Mantequilla':'Garpa Alimentacion','Queso lasana':'Garpa Alimentacion',
-  'Mermelada arandanos':'Garpa Alimentacion','Arroz':'Garpa Alimentacion',
-  'Harina rebozados':'Garpa Alimentacion','Pasta spaghetti':'Garpa Alimentacion',
-  'Pasta lasana':'Garpa Alimentacion','Tinta de calamar':'Garpa Alimentacion',
-  'Sal':'Garpa Alimentacion','Pimienta negra':'Garpa Alimentacion',
-  'Aceite de oliva':'Garpa Alimentacion','Aceite de girasol':'Garpa Alimentacion',
-  'Mojo canario':'Domingo Gutierrez','Mayonesa de mango':'Domingo Gutierrez',
-  'Salsa mostaza':'Domingo Gutierrez','Salsa meuniere':'Domingo Gutierrez',
-  'Vinagreta de fresa':'Domingo Gutierrez','Cilantro':'Domingo Gutierrez',
-  'Pan':'La Venta Nueva',
-  'Vino blanco cocina':'Comesa Canarias'
-};
-
-var PROVEEDOR_CONTACTO = {
-  'Pescados Goyo': {tel:'', web:'pescadosgoyo.es'},
-  'Jovencasa Carnes': {tel:'', web:'jovencasa.com'},
-  'Gambin Canarias (Mercatenerife)': {tel:'922 229 371', web:'gambincanarias.com'},
-  'Surimar Fresco y Congelados': {tel:'928 183 575', web:'surimarfrescoycongelados.es'},
-  'Garpa Alimentacion': {tel:'922 215 500', web:'garpa-alimentacion.com'},
-  'Domingo Gutierrez': {tel:'922 214 111', web:'domingogutierrez.com'},
-  'Makro Tenerife': {tel:'', web:'makro.es'},
-  'Comesa Canarias': {tel:'', web:'comesacanarias.es'},
-  'La Venta Nueva': {tel:'', web:'laventanuevadistribucion.com'}
-};
-
 function getPedidosAgrupados(){
-  var grouped = {};
+  var grouped={};
   prods.forEach(function(p){
-    var st = status(p.qty, p.min);
-    if(st === 'warn' || st === 'danger'){
-      var prov = MAPA_PROVEEDOR[p.name] || 'Otros';
-      if(!grouped[prov]) grouped[prov] = [];
-      grouped[prov].push({
-        name: p.name,
-        unit: p.unit,
-        actual: p.qty,
-        minimo: p.min,
-        pedir: Math.max(p.min * 2 - p.qty, p.min),
-        estado: st
-      });
+    var st=status(p.qty,p.min);
+    if(st==='warn'||st==='danger'){
+      var prov=MAPA_PROV[p.name]||'Otros';
+      if(!grouped[prov])grouped[prov]=[];
+      grouped[prov].push({name:p.name,unit:p.unit,actual:p.qty,minimo:p.min,pedir:Math.max(p.min*2-p.qty,p.min),estado:st});
     }
   });
   return grouped;
 }
-
 function renderPedido(){
-  var grouped = getPedidosAgrupados();
-  var provs = Object.keys(grouped);
-  var totalItems = 0;
-  provs.forEach(function(p){ totalItems += grouped[p].length; });
-
-  if(totalItems === 0){
-    document.getElementById('pedido-ok').style.display = 'block';
-    document.getElementById('pedido-content').style.display = 'none';
-    return;
-  }
-  document.getElementById('pedido-ok').style.display = 'none';
-  document.getElementById('pedido-content').style.display = 'block';
-  document.getElementById('pedido-subtitle').textContent = totalItems + ' productos de ' + provs.length + ' proveedores';
-
-  var html = '';
+  var grouped=getPedidosAgrupados();
+  var provs=Object.keys(grouped);
+  var total=0;provs.forEach(function(p){total+=grouped[p].length;});
+  if(total===0){document.getElementById('pedido-ok').style.display='block';document.getElementById('pedido-content').style.display='none';return;}
+  document.getElementById('pedido-ok').style.display='none';document.getElementById('pedido-content').style.display='block';
+  document.getElementById('pedido-subtitle').textContent=total+' productos de '+provs.length+' proveedores';
+  var html='';
   provs.forEach(function(prov){
-    var items = grouped[prov];
-    var contacto = PROVEEDOR_CONTACTO[prov] || {tel:'', web:''};
-    html += '<div class="pedido-grupo">';
-    html += '<div class="pedido-grupo-header">';
-    html += '<div><div class="pedido-grupo-nombre">🏪 ' + prov + '</div>';
-    if(contacto.tel || contacto.web) html += '<div class="pedido-grupo-loc">' + (contacto.tel ? '📞 '+contacto.tel+' · ' : '') + '🌐 '+contacto.web+'</div>';
-    html += '</div>';
-    html += '<div style="font-size:12px;color:#888780">'+items.length+' producto'+(items.length>1?'s':'')+'</div>';
-    html += '</div>';
+    var items=grouped[prov];var c=CONTACTO_PROV[prov]||{tel:'',web:''};
+    html+='<div class="pedido-grupo"><div class="pedido-grupo-header"><div><div class="pedido-grupo-nombre">🏪 '+prov+'</div>';
+    if(c.tel||c.web)html+='<div class="pedido-grupo-loc">'+(c.tel?'📞 '+c.tel+' · ':'')+' 🌐 '+c.web+'</div>';
+    html+='</div><div style="font-size:12px;color:#888780">'+items.length+' prod.</div></div>';
     items.forEach(function(item){
-      var badge = item.estado === 'danger' ? '<span class="badge-critico">CRITICO</span>' : '<span class="badge-bajo">BAJO</span>';
-      html += '<div class="pedido-item">';
-      html += '<div><div class="pedido-item-name">'+item.name+badge+'</div>';
-      html += '<div class="pedido-item-info">Actual: '+item.actual+(item.unit?' '+item.unit:'')+' · Minimo: '+item.minimo+(item.unit?' '+item.unit:'')+'</div></div>';
-      html += '<div class="pedido-item-qty"><div class="pedido-item-qty-val">'+item.pedir+(item.unit?' '+item.unit:'')+'</div><div class="pedido-item-qty-lbl">a pedir</div></div>';
-      html += '</div>';
+      var badge=item.estado==='danger'?'<span class="bcrit">CRITICO</span>':'<span class="bbajo">BAJO</span>';
+      html+='<div class="pedido-item"><div><div class="pedido-item-name">'+item.name+badge+'</div><div class="pedido-item-info">Actual: '+item.actual+(item.unit?' '+item.unit:'')+' · Min: '+item.minimo+(item.unit?' '+item.unit:'')+'</div></div><div><div class="pedido-qty-val">'+item.pedir+(item.unit?' '+item.unit:'')+'</div><div class="pedido-qty-lbl">a pedir</div></div></div>';
     });
-    html += '</div>';
+    html+='</div>';
   });
-  document.getElementById('pedido-grupos').innerHTML = html;
+  document.getElementById('pedido-grupos').innerHTML=html;
 }
-
 function getPedidoTexto(){
-  var grouped = getPedidosAgrupados();
-  var fecha = new Date().toLocaleDateString('es-ES');
-  var txt = 'PEDIDO El Mirador de los Abrigos - ' + fecha + '\n\n';
+  var grouped=getPedidosAgrupados();var fecha=new Date().toLocaleDateString('es-ES');
+  var txt='PEDIDO El Mirador de los Abrigos - '+fecha+'\n\n';
   Object.keys(grouped).forEach(function(prov){
-    txt += '--- ' + prov.toUpperCase() + ' ---\n';
-    grouped[prov].forEach(function(item){
-      txt += '• ' + item.name + ': ' + item.pedir + (item.unit?' '+item.unit:'') + '\n';
-    });
-    txt += '\n';
+    txt+='--- '+prov.toUpperCase()+' ---\n';
+    grouped[prov].forEach(function(item){txt+='* '+item.name+': '+item.pedir+(item.unit?' '+item.unit:'')+'\n';});
+    txt+='\n';
   });
   return txt;
 }
-
 function enviarWhatsApp(){
-  var grouped = getPedidosAgrupados();
-  var provs = Object.keys(grouped);
-  if(provs.length === 0){ alert('No hay productos que pedir'); return; }
-  var fecha = new Date().toLocaleDateString('es-ES');
-  var msg = '🐟 *PEDIDO El Mirador de los Abrigos*\n📅 ' + fecha + '\n\n';
-  provs.forEach(function(prov){
-    var contacto = PROVEEDOR_CONTACTO[prov] || {};
-    msg += '🏪 *' + prov + '*\n';
-    grouped[prov].forEach(function(item){
-      var icono = item.estado === 'danger' ? '🔴' : '🟡';
-      msg += icono + ' ' + item.name + ': *' + item.pedir + (item.unit?' '+item.unit:'') + '*\n';
-    });
-    msg += '\n';
-  });
-  var url = 'https://wa.me/?text=' + encodeURIComponent(msg);
-  window.open(url, '_blank');
-}
-
-function enviarEmail(){
-  var grouped = getPedidosAgrupados();
-  var provs = Object.keys(grouped);
-  if(provs.length === 0){ alert('No hay productos que pedir'); return; }
-  var fecha = new Date().toLocaleDateString('es-ES');
-  var asunto = 'Pedido El Mirador de los Abrigos - ' + fecha;
-  var cuerpo = getPedidoTexto();
-  var mailto = 'mailto:?subject=' + encodeURIComponent(asunto) + '&body=' + encodeURIComponent(cuerpo);
-  window.open(mailto, '_blank');
-}
-
-function generarPDF(){
-  var grouped = getPedidosAgrupados();
-  if(Object.keys(grouped).length === 0){ alert('No hay productos que pedir'); return; }
-  var fecha = new Date().toLocaleDateString('es-ES');
-  var html = '<html><head><meta charset="UTF-8"><style>';
-  html += 'body{font-family:system-ui,sans-serif;padding:30px;color:#1a1a18}';
-  html += 'h1{font-size:20px;font-weight:500;margin-bottom:4px}';
-  html += '.fecha{font-size:13px;color:#888780;margin-bottom:24px}';
-  html += '.prov{margin-bottom:20px}';
-  html += '.prov-name{font-size:15px;font-weight:500;background:#f0ede8;padding:8px 12px;border-radius:6px;margin-bottom:8px}';
-  html += '.item{display:flex;justify-content:space-between;padding:6px 12px;border-bottom:1px solid #e0ded6;font-size:13px}';
-  html += '.qty{font-weight:500;color:#0d2340}';
-  html += '.critico{color:#a32d2d;font-size:11px;margin-left:6px}';
-  html += '.bajo{color:#854f0b;font-size:11px;margin-left:6px}';
-  html += '</style></head><body>';
-  html += '<h1>🐟 Pedido — El Mirador de los Abrigos</h1>';
-  html += '<div class="fecha">Fecha: ' + fecha + '</div>';
+  var grouped=getPedidosAgrupados();if(!Object.keys(grouped).length){alert('No hay productos que pedir');return;}
+  var fecha=new Date().toLocaleDateString('es-ES');
+  var msg='🐟 *PEDIDO El Mirador de los Abrigos*\n📅 '+fecha+'\n\n';
   Object.keys(grouped).forEach(function(prov){
-    var contacto = PROVEEDOR_CONTACTO[prov] || {};
-    html += '<div class="prov">';
-    html += '<div class="prov-name">🏪 ' + prov + (contacto.tel?' &nbsp;·&nbsp; 📞 '+contacto.tel:'') + '</div>';
-    grouped[prov].forEach(function(item){
-      var badge = item.estado==='danger'?'<span class="critico">CRITICO</span>':'<span class="bajo">BAJO</span>';
-      html += '<div class="item"><span>'+item.name+badge+'</span><span class="qty">'+item.pedir+(item.unit?' '+item.unit:'')+'</span></div>';
-    });
-    html += '</div>';
+    msg+='🏪 *'+prov+'*\n';
+    grouped[prov].forEach(function(item){msg+=(item.estado==='danger'?'🔴':'🟡')+' '+item.name+': *'+item.pedir+(item.unit?' '+item.unit:'')+'*\n';});
+    msg+='\n';
   });
-  html += '</body></html>';
-  var win = window.open('','_blank');
-  win.document.write(html);
-  win.document.close();
-  win.focus();
-  setTimeout(function(){ win.print(); }, 500);
+  window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
+}
+function enviarEmail(){
+  var grouped=getPedidosAgrupados();if(!Object.keys(grouped).length){alert('No hay productos que pedir');return;}
+  var fecha=new Date().toLocaleDateString('es-ES');
+  window.open('mailto:?subject='+encodeURIComponent('Pedido El Mirador de los Abrigos - '+fecha)+'&body='+encodeURIComponent(getPedidoTexto()),'_blank');
+}
+function generarPDF(){
+  var grouped=getPedidosAgrupados();if(!Object.keys(grouped).length){alert('No hay productos que pedir');return;}
+  var fecha=new Date().toLocaleDateString('es-ES');
+  var h='<html><head><meta charset="UTF-8"><style>body{font-family:system-ui,sans-serif;padding:30px;color:#1a1a18}h1{font-size:20px;font-weight:500;margin-bottom:4px}.fecha{font-size:13px;color:#888780;margin-bottom:24px}.prov{margin-bottom:20px}.pnombre{font-size:14px;font-weight:500;background:#f0ede8;padding:7px 12px;border-radius:6px;margin-bottom:6px}.item{display:flex;justify-content:space-between;padding:5px 12px;border-bottom:1px solid #e0ded6;font-size:13px}.qty{font-weight:500;color:#0d2340}.bcrit{color:#a32d2d;font-size:11px;margin-left:4px}.bbajo{color:#854f0b;font-size:11px;margin-left:4px}</style></head><body>';
+  h+='<h1>🐟 Pedido — El Mirador de los Abrigos</h1><div class="fecha">Fecha: '+fecha+'</div>';
+  Object.keys(grouped).forEach(function(prov){
+    var c=CONTACTO_PROV[prov]||{tel:''};
+    h+='<div class="prov"><div class="pnombre">🏪 '+prov+(c.tel?' · 📞 '+c.tel:'')+'</div>';
+    grouped[prov].forEach(function(item){
+      h+='<div class="item"><span>'+item.name+(item.estado==='danger'?'<span class="bcrit">CRITICO</span>':'<span class="bbajo">BAJO</span>')+'</span><span class="qty">'+item.pedir+(item.unit?' '+item.unit:'')+'</span></div>';
+    });
+    h+='</div>';
+  });
+  h+='</body></html>';
+  var w=window.open('','_blank');w.document.write(h);w.document.close();setTimeout(function(){w.print();},500);
 }
 
 renderStock();
 renderProveedores();
-renderPedido();
 </script>
 </body>
 </html>
