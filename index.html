@@ -707,14 +707,21 @@ var GGRUP=[
   {id:6,nom:'Otros Gastos',ico:'📦',col:'#ba7517'}
 ];
 
-var gastEmpresas=JSON.parse(localStorage.getItem('gast_emp')||'[]');
-var gastFacturas=JSON.parse(localStorage.getItem('gast_fac')||'[]');
+// Almacenamiento con fallback seguro
+var _stor=(function(){
+  try{localStorage.setItem('_t','1');localStorage.removeItem('_t');
+    return{ok:true,get:function(k,d){try{var v=localStorage.getItem(k);return v!==null?JSON.parse(v):d;}catch(e){return d;}},set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}};}
+  catch(e){var _m={};return{ok:false,get:function(k,d){return k in _m?_m[k]:d;},set:function(k,v){_m[k]=v;}};}
+})();
+
+var gastEmpresas=_stor.get('gast_emp',[]);
+var gastFacturas=_stor.get('gast_fac',[]);
 var gMes=new Date().getMonth(),gAno=new Date().getFullYear();
 var linCount=0,facImgData=null;
 
 function saveG(){
-  localStorage.setItem('gast_emp',JSON.stringify(gastEmpresas));
-  localStorage.setItem('gast_fac',JSON.stringify(gastFacturas));
+  _stor.set('gast_emp',gastEmpresas);
+  _stor.set('gast_fac',gastFacturas);
 }
 
 function fmtEur(v){return(+(v)||0).toFixed(2).replace('.',',')+'€';}
@@ -1046,6 +1053,13 @@ function generarInformeMensual(){
 
 // Init gastos label
 document.getElementById('g-mes-lbl').textContent=mesStr();
+if(!_stor.ok){
+  var warn=document.createElement('div');
+  warn.style.cssText='margin:0 1.5rem .5rem;padding:10px 14px;border-radius:8px;background:#fff8e1;border-left:3px solid #BA7517;color:#5a3a00;font-size:13px;line-height:1.5';
+  warn.innerHTML='⚠ <strong>Almacenamiento no disponible en este navegador.</strong> Las facturas no se guardarán al cerrar. Para conservar los datos abre el archivo desde un servidor o usa Chrome/Firefox.<br><small style="color:#888780">Tip: arrastra el archivo sobre la barra de Chrome → chrome://newtab</small>';
+  var gPanel=document.getElementById('panel-gastos');
+  gPanel.insertBefore(warn,gPanel.firstChild);
+}
 </script>
 </body>
 </html>
